@@ -1,11 +1,10 @@
 (function() {
-
   function scrollHistory() {
     $('#message-history').animate({ scrollTop: messageHistory.scrollHeight }, 250);
   }
 
   function handleSend(e) {
-
+    // bail if keypress is not "enter"
     if (e.type == "keypress" && e.keyCode != 13) {
       return;
     }
@@ -42,5 +41,4 @@
 
   // scroll history to bottom
   scrollHistory();
-
 })();
