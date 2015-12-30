@@ -85,9 +85,17 @@ Client.prototype.connect = function(url, sessionData, result) {
     };
 
     ev.channel.onmessage = function(e) {
-      console.log(e.data);
+      if (self.dataChannelHandler != undefined) {
+        self.dataChannelHandler(JSON.parse(e.data));
+      } else {
+        console.log("no handler: ", e.data);
+      }
     };
   };
+}
+
+Client.prototype.setDataChannelHandler = function(handler) {
+  this.dataChannelHandler = handler;
 }
 
 Client.prototype.sendMessage = function(data) {

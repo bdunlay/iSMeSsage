@@ -23,7 +23,12 @@
 
 
   channel.onopen = function(event) {
-    channel.send("hello!");
+    channel.send(JSON.stringify({
+      "type": "contact"
+    }));
+    channel.send(JSON.stringify({
+      "type": "message"
+    }));  
   }
 
   channel.onerror = function (err) {

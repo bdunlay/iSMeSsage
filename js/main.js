@@ -26,6 +26,20 @@
     scrollHistory();
   }
 
+  function onDataReceived(data) {
+    if (!data.type) {
+      return;
+    }
+
+    switch (data.type) {
+      case "contact":
+        console.log("new contact");
+        break;
+      case "message":
+        console.log("new message");
+    }
+  }
+
   // handle send message on click
   var sendMessage = document.getElementById('send-message');      
   sendMessage.addEventListener('click', handleSend, false);
@@ -44,6 +58,8 @@
   var codeInput = document.getElementById('inputPassword');
 
   var client = new Client();
+
+  client.setDataChannelHandler(onDataReceived);
 
   var connectButton = document.getElementById('connect');
   connectButton.addEventListener('click', function() {
