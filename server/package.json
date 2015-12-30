@@ -1,0 +1,28 @@
+{
+  "name": "server",
+  "version": "0.0.0",
+  "description": "Signaling server for iSMeSsage",
+  "main": "index.js",
+  "dependencies": {
+    "socket.io": "~1.3.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/bdunlay/iSMeSsage"
+  },
+  "keywords": [
+    "WebRTC",
+    "iSMeSsage",
+    "SMS",
+    "Android"
+  ],
+  "author": "Brian Dunlay",
+  "bugs": {
+    "url": "https://github.com/bdunlay/iSMeSsage/issues"
+  },
+  "homepage": "https://github.com/bdunlay/iSMeSsage"
+}
