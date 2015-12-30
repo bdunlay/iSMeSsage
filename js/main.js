@@ -1,4 +1,5 @@
 (function() {
+  // scroll to bottom of message history
   function scrollHistory() {
     $('#message-history').animate({ scrollTop: messageHistory.scrollHeight }, 250);
   }
@@ -36,9 +37,26 @@
   // get message history element
   var messageHistory = document.getElementById('message-history');
 
-  // focus on the text input
-  sendMessageInput.focus();
-
   // scroll history to bottom
   scrollHistory();
+
+  var phoneNumberInput = document.getElementById('inputEmail');
+  var codeInput = document.getElementById('inputPassword');
+
+  var client = new Client();
+
+  var connectButton = document.getElementById('connect');
+  connectButton.addEventListener('click', function() {
+    client.connect("http://localhost:8080/browser", {
+      "phoneNumber": phoneNumberInput.value,
+      "code": codeInput.value
+    }, function(result) {
+      if (result) {
+        $('.form-signin').hide();
+        $('.sidebar').show();
+        $('.main').show();
+        sendMessageInput.focus();
+      }
+    });
+  }, false);
 })();

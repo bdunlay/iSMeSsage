@@ -48,6 +48,16 @@
 
     <div class="container-fluid">
       <div class="row">
+
+
+      <form class="form-signin" action="#">
+        <label for="inputEmail" class="">Phone Number</label>
+        <input id="inputEmail" class="form-control" placeholder="4085551234" required="" autofocus="" type="text">
+        <label for="inputPassword" class="">Code</label>
+        <input id="inputPassword" class="form-control" placeholder="1234567" required="" type="text">
+        <button class="btn btn-lg btn-primary btn-block" id="connect" type="submit">Connect</button>
+      </form>
+
         <div class="col-sm-3 col-md-2 sidebar">
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">One</a></li>
@@ -79,8 +89,13 @@
     <script src="js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <!-- App stuff -->
+    <!-- Socket.io -->
+    <script src="js/socket.io.js"></script>
+    <!-- WebRTC logic -->
+    <script src="js/webrtc.js"></script>
+    <!-- Fake mobile -->
+    <script src="js/mobile.js"></script>
+    <!-- Main logic -->
     <script src="js/main.js"></script>
-
   </body>
 </html>
